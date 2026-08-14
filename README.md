@@ -2,4 +2,4 @@
 
 Welcome to Catanduanes Tourist Spots site! Your guide to discover the beauty of Catanduanes.
 
-Live site:
+Live site: https://redulla-jhiannekaydee.github.io/catanduanes-tourist-spott/
