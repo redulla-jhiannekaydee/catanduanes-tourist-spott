@@ -65,6 +65,54 @@
                 </tr>
                 </tbody>
             </table>
+
+            <form id="suggestForm">
+                <p>
+                    <label for="placeName">Place Name:</label><br>
+                    <input type="text" id="placeName" name="placename" required><br>
+                </p>
+
+                <fieldset>
+                    <legend>Category</legend>
+                    <p>
+                        <input type="radio" id="category1" name="category" value="historical-spot">
+                        <label for="category1">Historical Spot</label>
+                    </p>
+
+                    <p>
+                        <input type="radio" id="category2" name="category" value="beach-spot">
+                        <label for="category2">Beaches</label>
+                    </p>
+
+                    <p>
+                        <input type="radio" id="category3" name="category" value="cliffside-view">
+                        <label for="category3">Nature and Cliffside View</label>
+                    </p>
+                </fieldset>
+                
+                <p>What's good about it?</p>
+                <p>
+                    <input type="checkbox" id="options1" name="options" value="scenic-view">
+                    <label for="options1">Scenic View</label><br>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="options2" name="options" value="ig-worthy">
+                    <label for="options2">Instagram-Worthy/Photo Spot</label><br>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="options3" name="options" value="express">
+                    <label for="options3">Educational (witnessing the history)</label><br>
+                </p>
+
+                <p>
+                    <label for="emailAdd">Enter your Email Address:</label><br>
+                    <input type="email" id="emailAdd" name="emailAdd" placeholder="juan.delacruz@example.com" required><br>
+                </p>
+
+                <button type="submit">Submit Suggestion</button>
+            </form>
         </main>
     </body>
 </html>
