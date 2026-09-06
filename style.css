@@ -12,8 +12,9 @@
     --opTextColorThree: #2C435C;
     --opShadeOfColor: #49898F;
     --opShadeOfColor2: #294B4F;
-    --backgroudCard: #BADFE7;
+    --backgroudCard: #ddefff;
     --boxShadow: #444D4F;
+    --borderForm: #608C94;
 }
 
 /* base styles - using the universal selector and the body element */
@@ -140,7 +141,7 @@ main article p i {
     border-radius: 18px;
     padding: 16px;
     margin-bottom: 1.5rem;
-    box-shadow: 0 4 10px var(--boxShadow);
+    box-shadow: 0 4px 10px var(--boxShadow);
 }
 
 .place-card h3 {
@@ -178,6 +179,12 @@ main article p i {
     gap: 1.5rem;
 }
 
+/* utilities */
+.text-center {
+    text-align: center;
+}
+
+
 /* for the forms part */
 form {
     margin-top: 1.5rem;
@@ -186,3 +193,92 @@ form {
     gap: 1rem;
 }
 
+form label {
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+    display: inline-block;
+}
+
+form p {
+    margin: 0.3rem 0;
+}
+
+form input[type="number"],
+form input[type="email"],
+form input[type="text"],
+form select,
+form textarea {
+    font-family: "Rubik", sans-serif;
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--borderForm);
+    border-radius: 10px;
+    font-size: 15px;
+    color: var(--ink);
+}
+
+fieldset {
+    border: 1px solid var(--muted);
+    border-radius: 10px;
+    padding: 16px
+}
+
+fieldset legend {
+    color: var(--brand);
+    font-weight: 600;
+    padding: 0 0.4rem;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    accent-color: var(--brand);
+    margin-right: 0.4rem;
+}
+
+form button[type="submit"] {
+    align-self: flex-start;
+    background: var(--brand);
+    color: var(--opTextColorOne);
+    border: none;
+    padding: 0.7rem 1.6rem;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: "Rubik", sans-serif;
+}
+
+form button:hover {
+    opacity: 0.9;
+}
+
+/* table part in the contact form */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5rem 0;
+}
+
+th, td {
+    border: 1px solid var(--opShadeOfColor2);
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+}
+
+thead th {
+    background: var(--brand);
+    color: var(--opTextColorOne);
+}
+
+tbody tr:nth-child(even) {
+    background: var(--paper);
+}
+
+/* a visible focus state */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: 3px solid var(--brand);
+    outline-offset: 2px;
+}
