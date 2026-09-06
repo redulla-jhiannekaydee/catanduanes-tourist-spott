@@ -1,0 +1,188 @@
+/* fonts to use from gfonts */
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* variables - a brand color, an ink color, a muted color, a light background, and other necessary colors */
+:root {
+    --brand: #578FCA;
+    --ink: #314E6C;
+    --muted: #638886;
+    --paper: #D1F8EF;
+    --opTextColorOne: #F6F6F6;
+    --opTextColorTwo: #E2E8E8;
+    --opTextColorThree: #2C435C;
+    --opShadeOfColor: #49898F;
+    --opShadeOfColor2: #294B4F;
+    --backgroudCard: #BADFE7;
+    --boxShadow: #444D4F;
+}
+
+/* base styles - using the universal selector and the body element */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink);
+    background: var(--paper);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+/* layoutting from header to footer parts
+1. adjusting the header */
+header {
+    background: var(--brand);
+    color: var(--opTextColorOne);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-family: "Averia Serif Libre", serif;
+    font-weight: 500;
+    font-style: normal;
+    margin: 0 0 0.25rem;
+    letter-spacing: 0.5px;
+}
+
+header p {
+    font-style: italic;
+    margin: 0;
+    font-size: 17px;
+    opacity: 0.9;
+}
+
+/* 2. adjusting the navigation bar */
+nav {
+    background: var(--opShadeOfColor);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    display: block;
+    padding: 0.9rem 1.4rem;
+    color: var(--opTextColorTwo);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    background: var(--opShadeOfColor2);
+}
+
+/* 3. designing the main body/part */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: block;
+}
+
+main h2 {
+    text-align: center;
+    color: var(--brand);
+    margin-bottom: 2rem;
+}
+
+/* 4. adjusting the footer */
+footer {
+    background: var(--opShadeOfColor);
+    color: var(--opTextColorTwo);
+    text-align: center;
+    padding: 1rem;
+    font-size: 11px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* components */
+main article h1 {
+    color: var(--ink);
+}
+
+main article h3 {
+    color: var(--ink);
+    margin-top: 0;
+}
+
+main article p i {
+    color: var(--opShadeOfColor2);
+}
+
+/* a grid layout for place cards */
+.place-card {
+    background: var(--backgroudCard);
+    border-left: 8px solid var(--brand);
+    border-radius: 18px;
+    padding: 16px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4 10px var(--boxShadow);
+}
+
+.place-card h3 {
+    color: var(--brand);
+    margin: 0.6rem 0 0.4rem;
+}
+
+.place-card p i {
+    color: var(--muted);
+}
+
+.place-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+}
+
+.button {
+    display: inline-block;
+    background: var(--brand);
+    color: var(--opTextColorTwo);
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+
+.place-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+/* for the forms part */
+form {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
