@@ -252,7 +252,7 @@ form input[type="checkbox"] {
 form button[type="submit"] {
     align-self: flex-start;
     background: var(--brand);
-    color: var(--opTextColorOne);
+    color: var(--textLight);
     border: none;
     padding: 0.7rem 1.6rem;
     border-radius: 8px;
