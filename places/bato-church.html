@@ -2,12 +2,13 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../style.css">
         <title>Catanduanes Tourist Spots</title>
     </head>
 
     <body>
+    <div class="page">
     <!-- header -->
         <header class="site-header">
             <div class="guide-name">
@@ -24,20 +25,36 @@
             </nav>
         </header>
 
+        <aside class="page-sidebar">
+            <h2>Quick Tips</h2>
+            <ul>
+                <li>Most falls and viewpoints are best visited in the morning, before the crowds and the heat.</li>
+                <li>Bring cash, since entrance fees at most spots are small and do not take credit/debit cards.</li>
+                <li>Always check the weather first before heading to cliffside or coastal spots.</li>
+            </ul>
+        </aside>
+
 
         <!-- places description -->
         <main> 
-            <article>  
-            <h1>Bato Church (St. John the Baptist Church)</h1>
-            <img src="../cts-pictures/places-cts/bato-church-cts.jpg" alt="A historic Spanish-era stone church with a bell tower set against green hills" width="400px" height="400px">
-            <br>
+            <div class="post-header">
+                <p class="post-meta">Historical Spot &middot; Bato, Catanduanes</p>
+                <h1>Bato Church (St. John the Baptist Church)</h1>
+            </div>
 
-            <p>
-            Bato Church, also known as St. John the Baptist Parish Church, is one of the oldest churches in the province. It is made of coral stones and mortar, which was built from 1830-1883. The
-            church is known for its historic architecture and connection to the community’s past. Its historical significance makes it as one of the places I picked. The Bato Church is the oldest 
-            standing church in Catanduanes—that represents the province’s roots and the resilience of its structures and community through centuries of natural disasters and change.
-            </p>
+            <div class="post-hero-image">
+                <img src="../cts-pictures/places-cts/bato-church-cts.jpg" alt="A historic Spanish-era stone church with a bell tower set against green hills" width="400px" height="400px">
+            </div>
 
+            <div class="post-layout">
+                <article class="post-main">
+                <p>
+                Bato Church, also known as St. John the Baptist Parish Church, is one of the oldest churches in the province. It is made of coral stones and mortar, which was built from 1830-1883. The
+                church is known for its historic architecture and connection to the community’s past. Its historical significance makes it as one of the places I picked. The Bato Church is the oldest 
+                standing church in Catanduanes—that represents the province’s roots and the resilience of its structures and community through centuries of natural disasters and change.
+                </p>
+
+            <div class="table-wrap">
             <table>
                 <thead>
                     <tr>
@@ -57,6 +74,7 @@
                 </tr>
                 </tbody>
             </table>
+            </div>
 
             <h2>Have a Place to Suggest?</h2>
             <p>Know a place in Catanduanes that deserves to be featured? Suggest a place and help us discover more destinations/tourist spots to include in our guide!</p>
@@ -118,11 +136,55 @@
 
                 <button type="submit">Submit Suggestion</button>
             </form>
+        </article>
+
+        <!-- other places-->
+        <aside class="post-sidebar">
+            <h3>More Places to Explore</h3>
+            <ul class="sidebar-list">
+                <li>
+                    <a href="binurong-point.html">
+                    <img src="../cts-pictures/places-cts/binurong-point-cts.jpg" alt="">
+                    <span>Binurong Point<small>Baras, Catanduanes</small></span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="hiyop-highlands.html">
+                    <img src="../cts-pictures/places-cts/hiyop-highlands-cts.jpg" alt="">
+                    <span>Hiyop Highlands<small>Pandan, Catanduanes</small></span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="mamangal-beach-resort.html">
+                    <img src="../cts-pictures/places-cts/mamangal-beach-cts.jpg" alt="">
+                    <span>Mamangal Beach<small>Virac, Catanduanes</small></span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="maribina-falls.html">
+                    <img src="../cts-pictures/places-cts/maribina-falls-cts.jpg" alt="">
+                    <span>Maribina Falls<small>Bato, Catanduanes</small></span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="summit-view-park.html">
+                    <img src="../cts-pictures/places-cts/summit-view-park-cts.jpg" alt="">
+                    <span>Summit View Park<small>Viga, Catanduanes</small></span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        </div>
         </main>
     
         <!--footer part-->
         <footer>
             <p>&copy; 2026 Catanduanes Tourist Spots</p>
         </footer>
+    </div>
     </body>
 </html>

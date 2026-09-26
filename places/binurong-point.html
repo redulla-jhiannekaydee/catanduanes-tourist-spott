@@ -2,12 +2,13 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../style.css">
         <title>Catanduanes Tourist Spots</title>
     </head>
 
     <body>
+    <div class="page">
     <!-- header -->
         <header class="site-header">
             <div class="guide-name">
@@ -24,15 +25,30 @@
             </nav>
         </header>
 
+        <aside class="page-sidebar">
+            <h2>Quick Tips</h2>
+            <ul>
+                <li>Most falls and viewpoints are best visited in the morning, before the crowds and the heat.</li>
+                <li>Bring cash, since entrance fees at most spots are small and do not take credit/debit cards.</li>
+                <li>Always check the weather first before heading to cliffside or coastal spots.</li>
+            </ul>
+        </aside>
+
+
 
         <!-- places description -->
         <main> 
-            <article>  
-            <h1>Binurong Point</h1>
-            <img src="../cts-pictures/places-cts/binurong-point-cts.jpg" alt="The Binurong Point, dramatic rocky cliffs and crashing waves along the Pacific Coast" 
-            width="400px" height="400px">
-            <br>
+            <div class="post-header">
+                <p class="post-meta">Nature &amp; Cliffside View &middot; Guinsaanan, Baras, Catanduanes</p>
+                <h1>Binurong Point</h1>
+            </div>
 
+            <div class="post-hero-image">
+            <img src="../cts-pictures/places-cts/binurong-point-cts.jpg" alt="The Binurong Point, dramatic rocky cliffs and crashing waves along the Pacific Ocean">
+            </div>
+
+            <div class="post-layout">
+            <article class="post-main"></article>
             <p>
             Binurong Point is an astonishing destination located in Baras, Catanduanes, known for its rolling green hills, dramatic cliffs, and panoramic views of the Pacific Ocean. 
             Visitors can take a short trek to reach the viewpoint, where they can enjoy the beautiful landscape, take photos, have a picnic, or simply appreciate the peaceful surroundings. 
@@ -40,6 +56,7 @@
             beauty that makes the province special. I picked this place because its spectacular view offers a memorable experience to explore the beauty of Catanduanes.
             </p>
 
+            <div class="table-wrap">
             <table>
                 <thead>
                     <tr>
@@ -59,6 +76,7 @@
                 </tr>
                 </tbody>
             </table>
+            </div>
 
             <h2>Have a Place to Suggest?</h2>
             <p>Know a place in Catanduanes that deserves to be featured? Suggest a place and help us discover more destinations/tourist spots to include in our guide!</p>
@@ -120,11 +138,54 @@
 
                 <button type="submit">Submit Suggestion</button>
             </form>
+        </article>
+
+        <aside class="post-sidebar">
+            <h3>More Places to Explore</h3>
+            <ul class="sidebar-list">
+                <li>
+                    <a href="bato-church.html">
+                    <img src="../cts-pictures/places-cts/bato-church-cts.jpg" alt="">
+                    <span>Bato Church<small>Bato, Catanduanes</small></span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="hiyop-highlands.html">
+                    <img src="../cts-pictures/places-cts/hiyop-highlands-cts.jpg" alt="">
+                    <span>Hiyop Highlands<small>Pandan, Catanduanes</small></span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="mamangal-beach-resort.html">
+                    <img src="../cts-pictures/places-cts/mamangal-beach-cts.jpg" alt="">
+                    <span>Mamangal Beach<small>Virac, Catanduanes</small></span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="maribina-falls.html">
+                    <img src="../cts-pictures/places-cts/maribina-falls-cts.jpg" alt="">
+                    <span>Maribina Falls<small>Bato, Catanduanes</small></span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="summit-view-park.html">
+                    <img src="../cts-pictures/places-cts/summit-view-park-cts.jpg" alt="">
+                    <span>Summit View Park<small>Viga, Catanduanes</small></span>
+                    </a>
+                </li>
+        </aside>
+        </div>
         </main>
     
         <!--footer part-->
         <footer>
             <p>&copy; 2026 Catanduanes Tourist Spots</p>
         </footer>
+    </div>
     </body>
 </html>

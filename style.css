@@ -1,15 +1,18 @@
 /* fonts to use from gfonts */
 @import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-/* variables - a brand color, an ink color, a muted color, a light background, and other necessary colors */
+/* variables - a brand color, an ink color, a muted color, a light background, and other necessary colors 
+- a cool sea and nature palette inspired colors */
+
 :root {
-    --brand: #578FCA;
-    --ink: #314E6C;
-    --muted: #638886;
-    --paper: #D1F8EF;
-    --textLight: #F6F6F6;
-    --shadeDark: #294B4F;
-    --backgroudCard: #DDEFFF;
+    --brand: #147A82;
+    --ink: #0B2B3A;
+    --muted: #3F6172;
+    --paper: #EAF3F1;
+    --leaf: #2F7D5B;
+    --textLight: #FFFFFF;
+    --backgroundCard: #FFFFFF;
+    --shadeDark: #0F4C5C;
 }
 
 /* base styles - using the universal selector and the body element */
@@ -24,9 +27,26 @@ body {
     font-weight: normal;
     font-style: normal;
     font-size: 15px;
-    line-height: 1.5;
+    line-height: 1.6;
     color: var(--ink);
     background: var(--paper);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3 {
+    font-family: "Averia Serif Libre", serif;
+    margin: 0;
+}
+
+p {
+    margin: 0 0 1rem;
+    max-width: 62ch; 
+}
+
+a {
+    color: var(--shadeDark);
 }
 
 img {
@@ -35,26 +55,80 @@ img {
     border-radius: 12px;
 }
 
+/* page skeleton - css grid wrapping header, sidebar, main, and footer */
+.page {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-areas: 
+        "masthead masthead"
+        "side     main"
+        "foot     foot";
+    gap: 16px;
+}
+
+.site-header {
+    grid-area: masthead;
+}
+
+.page-sidebar {
+    grid-area: side;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: foot;
+}
+
+.page-sidebar {
+    padding: 1.5rem 1rem;
+    background: var(--backgroundCard);
+}
+
+.page-sidebar h2 {
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 0.8rem;
+}
+
+.page-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    font-size: 0.85rem;
+    color: var(--ink);
+}
+
 /* layoutting from header to footer parts
-1. adjusting the header *using flexbox */
+1. adjusting the header using flexbox */
+
 .site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: var(--brand);
     color: var(--textLight);
-    padding: 1.5rem 2rem;
+    gap: 1rem;
+    padding: 1.2rem 2rem;
     min-height: 110px;
     flex-wrap: wrap;
-    gap: 1rem;
+}
+
+.guide-name {
+    min-width: 0;
 }
 
 .guide-name h1 {
-    font-family: "Averia Serif Libre", serif;
     font-weight: 500;
     font-style: normal;
     margin: 0 0 0.25rem;
     letter-spacing: 0.5px;
+    color: var(--textLight);
 }
 
 /* 2. adjusting the navigation bar */
@@ -71,32 +145,33 @@ img {
 }
 
 .site-header nav a {
-    display: block;
     padding: 0.9rem 1.4rem;
     color: var(--textLight);
     text-decoration: none;
     font-size: 14px;
     border-radius: 10px;
-    transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .site-header nav a:hover {
-    background-color: rgba(41, 75, 79, 0.45);
-    box-shadow: 0 4px 14px rgba(41, 75, 79, 0.5);
+    background-color: rgba(10, 34, 37, 0.45);
+    box-shadow: 0 4px 14px rgba(10, 34, 37, 0.5);
     transform: translateY(-2px);
 }
 
 /* 3. designing the main body/part */
 main {
-    max-width: 1100px;
+    flex: 1;
+    width: 100%;
+    max-width: 1180px;
     margin: 0 auto;
     padding: 2rem 1rem;
-    display: block;
 }
 
 main h2 {
     text-align: center;
     color: var(--brand);
+    margin-top: 1rem;
     margin-bottom: 2rem;
 }
 
@@ -105,12 +180,14 @@ footer {
     background: var(--shadeDark);
     color: var(--textLight);
     text-align: center;
-    padding: 1rem;
-    font-size: 11px;
+    margin-top: 2rem;
+    padding: 0.6rem 1rem;
+    font-size: 12px;
 }
 
 footer p {
     margin: 0;
+    max-width: none;
 }
 
 /* components */
@@ -128,45 +205,199 @@ main article p i {
 }
 
 /* added for the hero banner */
-.hero-banner {
+#hero-banner {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 160px;
-    background: var(--backgroudCard);
-    border: 5px solid var(--brand);
-    border-radius: 15px;
-    padding: 1rem;
+    min-height: 480px;
+    flex-direction: column;
+    text-align: center;
+    background: 
+        linear-gradient(rgba(11, 43, 58, 0.35), rgba(11, 43, 58, 0.6)),
+        url('cts-pictures/places-cts/catanduanes-bg-hero.jpg') center / cover no-repeat;
+    border-radius: 24px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
 }
 
-.hero-banner h2 {
-    margin: 0;
+#hero-banner h2 {
+    position: relative;
+    z-index: 2;
+    color: var(--textLight);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+    font-size: 50px;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    max-width: 16ch;
+}
+
+#hero-banner .button-primary {
+    background: var(--textLight);
+    color: var(--shadeDark);
+    font-weight: 500;
+}
+
+p.hero-badge {
+    position: relative;
+    z-index: 2;
+    background: var(--paper);
     color: var(--ink);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 0.45rem 1.1rem;
+    border-radius: 999px;
+    margin-bottom: 1.2rem;
+}
+
+p.hero-sub {
+    position: relative;
+    z-index: 2;
+    color: var(--textLight);
+    max-width: 46ch;
+    font-size: 15px;
+}
+
+.hero-action {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+/* welcome / intro section */
+.welcome {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding: 1rem 0 4rem;
+    margin-top: 2rem;
+}
+
+.welcome-photo {
+    flex: 1 1 300px;
+    min-height: 260px;
+    position: relative;
+}
+
+.welcome-photo img {
+    width: 100%;
+    height: 100;
+    min-height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.welcome-photo .tag-pin {
+    position: absolute;
+    bottom: -14px;
+    left: 24px;
+    background: var(--shadeDark);
+    color: var(--textLight);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+}
+
+.welcome-text {
+    flex: 1 1 340px;
+}
+
+p.section-badge {
+    display: inline-block;
+    color: var(--shadeDark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+}
+
+.welcome-text h2 {
+    text-align: left;
+    font-size: 1.9rem;
+    margin-bottom: 0.8rem;
+}
+
+.welcome-text p {
+    color: var(--ink);
+}
+
+/* section title */
+h2.section-title {
     text-align: center;
-    font-style: italic;
-    font-size: 17px;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+/* about page */
+.about {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding: 1rem 0 2rem;
+}
+
+.about-photo {
+    flex: 0 0 auto;
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid var(--backgroundCard);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.about-text {
+    flex: 1 1 340px;
+}
+
+.about-text h2 {
+    text-align: left;
+    margin-bottom: 1rem;
 }
 
 /* a grid layout for place cards */
 .place-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
+    margin-bottom: 4rem;
 }
 
 .place-card {
-    flex: 1 1 240px;
-    background: var(--backgroudCard);
+    display: flex;
+    flex-direction: column;
+    background: var(--backgroundCard);
     border-left: 8px solid var(--brand);
     border-radius: 18px;
     padding: 16px;
-    margin-bottom: 1.5rem;
     box-shadow: 0 4px 10px var(--muted);
+    transition: transform 0.2s ease;
+}
+
+.place-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: auto;
+}
+.place-card:hover {
+    transform: translateY(-4px);
 }
 
 .place-card h3 {
     color: var(--brand);
     margin: 0.6rem 0 0.4rem;
+    font-size: 1.25rem;
+}
+
+.place-card p {
+    font-size: 0.8125rem;
 }
 
 .place-card p i {
@@ -186,11 +417,128 @@ main article p i {
     padding: 0.6rem 1.2rem;
     border-radius: 10px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 0.8125rem;
 }
 
 .button:hover {
     opacity: 0.9;
+}
+
+/* for place detail pages - blog-style post layout */
+.post-header {
+    text-align: center;
+    padding: 2rem 0 1.5rem;
+}
+
+.post-meta {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--shadeDark);
+    margin: 0 auto 0.6rem;
+    max-width: none;
+}
+
+.post-header h1 {
+    font-size: clamp(2rem, 5vw, 2.6rem);
+    color: var(--ink);
+}
+
+.post-hero-image {
+    max-width: 720px;
+    height: 320px;
+    margin: 0 auto 2.5rem;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--backgroundCard);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+.post-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.post-layout {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding-bottom: 2rem;
+}
+
+.post-main {
+    flex: 3 1 420px;
+    min-width: 0;
+}
+
+.post-main p {
+    color: var(--ink);
+}
+
+.post-main h2 {
+    text-align: left;
+    font-size: 1.4rem;
+    margin: 2.5rem 0 0.8rem;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.post-sidebar {
+    flex: 1 1 220px;
+    background: var(--backgroundCard);
+    border-radius: 18px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.post-sidebar h3 {
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 1rem;
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.sidebar-list a {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+.sidebar-list a:hover {
+    color: var(--brand);
+}
+
+.sidebar-list img {
+    width: 52px;
+    height: 52px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.sidebar-list small {
+    display: block;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: var(--muted);
 }
 
 /* utilities */
@@ -273,14 +621,14 @@ table {
 }
 
 th, td {
-    border: 1px solid var(--opShadeOfColor2);
+    border: 1px solid var(--muted);
     padding: 0.6rem 0.8rem;
     text-align: left;
 }
 
 thead th {
     background: var(--brand);
-    color: var(--opTextColorOne);
+    color: var(--textLight);
 }
 
 tbody tr:nth-child(even) {
@@ -288,6 +636,15 @@ tbody tr:nth-child(even) {
 }
 
 /* a visible focus state */
+a:focus-visible {
+    outline: 3px solid var(--brand);
+    outline-offset: 2px;
+}
+
+.site-header a:focus-visible {
+    outline-color: var(--textLight);
+}
+
 input:focus,
 select:focus,
 textarea:focus,
