@@ -58,12 +58,25 @@ img {
 /* page skeleton - css grid wrapping header, sidebar, main, and footer */
 .page {
     display: grid;
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas: 
-        "masthead masthead"
-        "side     main"
-        "foot     foot";
+        "masthead"
+        "main"
+        "side"
+        "foot";
     gap: 16px;
+}
+
+/* for a responsive layout in mobile/tablet */
+@media (min-width: 700px) {
+    .page {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        grid-template-areas: 
+            "masthead masthead"
+            "side     main"
+            "foot     foot";
+    }
 }
 
 .site-header {
