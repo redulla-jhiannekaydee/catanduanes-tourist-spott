@@ -344,7 +344,7 @@ p.section-badge {
 h2.section-title {
     text-align: center;
     font-size: 1.8rem;
-    margin-bottom: 2rem;
+    margin-bottom: 10px;
 }
 
 /* about page */
@@ -557,6 +557,10 @@ h2.section-title {
 /* utilities */
 .text-center {
     text-align: center;
+    color: var(--muted);
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+    margin-left: 260px;
 }
 
 /* for the forms part */
